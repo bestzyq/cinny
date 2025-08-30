@@ -969,7 +969,7 @@ function Messages() {
       </SequenceCard>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title={t('Settings.enc_url_preview', 'Url Preview in Encrypted Room')}
+          title={t('Settings.url_preview_encrypted_room', 'Url Preview in Encrypted Room')}
           after={<Switch variant="Primary" value={encUrlPreview} onChange={setEncUrlPreview} />}
         />
       </SequenceCard>
