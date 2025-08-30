@@ -1,6 +1,7 @@
 {
-  "defaultHomeserver": 2,
+  "defaultHomeserver": 0,
   "homeserverList": [
+    "bestzyq.cn",
     "converser.eu",
     "envs.net",
     "matrix.org",
@@ -32,7 +33,7 @@
   },
 
   "hashRouter": {
-    "enabled": false,
+    "enabled": true,
     "basename": "/"
   }
 }

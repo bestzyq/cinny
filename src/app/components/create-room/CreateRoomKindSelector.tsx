@@ -23,6 +23,7 @@ export function CreateRoomKindSelector({
   disabled,
   getIcon,
 }: CreateRoomKindSelectorProps) {
+  const { t } = useTranslation();
   return (
     <Box shrink="No" direction="Column" gap="100">
       {canRestrict && (
