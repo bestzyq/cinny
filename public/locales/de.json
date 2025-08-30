@@ -93,6 +93,14 @@
       "enable_markdown": "Markdown aktivieren"
     }
   },
+  "ClientRoot": {
+    "heating_up": "Wird gestartet",
+    "clear_cache_reload": "Cache leeren und neu laden",
+    "logout": "Abmelden",
+    "failed_to_load": "Laden fehlgeschlagen. {{error}}",
+    "failed_to_start": "Starten fehlgeschlagen. {{error}}",
+    "retry": "Erneut versuchen"
+  },
   "Pages": {
     "Login": {
       "login": "Anmelden",
@@ -185,6 +193,18 @@
       "password_mismatch": "Passwörter stimmen nicht überein",
       "invalid_username": "Ungültiger Benutzername",
       "invalid_password": "Passwort ist zu kurz oder zu schwach"
+    },
+    "Home": {
+      "title": "Startseite",
+      "mark_as_read": "Als gelesen markieren",
+      "no_rooms": "Keine Räume",
+      "no_rooms_description": "Sie haben noch keine Räume.",
+      "create_room": "Raum erstellen",
+      "create_room_button": "Raum erstellen",
+      "explore_community_rooms": "Community-Räume erkunden",
+      "join_with_address": "Mit Adresse beitreten",
+      "message_search": "Nachrichtensuche",
+      "rooms": "Räume"
     }
   },
   "Settings": {
@@ -300,5 +320,33 @@
     "cancel": "Abbrechen",
     "json_content": "JSON-Inhalt",
     "edit": "Bearbeiten"
+  },
+  "Features": {
+    "CreateRoomForm": {
+      "access": "Zugriff",
+      "name": "Name",
+      "topic_optional": "Thema (Optional)",
+      "options": "Optionen",
+      "advance_options": "Erweiterte Optionen",
+      "create": "Erstellen",
+      "encryption": "Ende-zu-Ende-Verschlüsselung",
+      "encryption_description": "Sobald diese Funktion aktiviert ist, kann sie nach der Raumerstellung nicht mehr deaktiviert werden.",
+      "knock_to_join": "Anklopfen zum Beitreten",
+      "knock_to_join_description": "Jeder kann eine Anfrage senden, um diesem Raum beizutreten.",
+      "allow_federation": "Föderation erlauben",
+      "allow_federation_description": "Benutzer von anderen Servern können beitreten."
+    },
+    "CreateSpaceForm": {
+      "access": "Zugriff",
+      "name": "Name",
+      "topic_optional": "Thema (Optional)",
+      "options": "Optionen",
+      "advance_options": "Erweiterte Optionen",
+      "create": "Erstellen",
+      "knock_to_join": "Anklopfen zum Beitreten",
+      "knock_to_join_description": "Jeder kann eine Anfrage senden, um diesem Space beizutreten.",
+      "allow_federation": "Föderation erlauben",
+      "allow_federation_description": "Benutzer von anderen Servern können beitreten."
+    }
   }
 }

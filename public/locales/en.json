@@ -185,6 +185,18 @@
       "password_mismatch": "Password mismatch",
       "invalid_username": "Invalid username",
       "invalid_password": "Password is too short or too weak"
+    },
+    "Home": {
+      "title": "Home",
+      "mark_as_read": "Mark as Read",
+      "no_rooms": "No Rooms",
+      "no_rooms_description": "You do not have any rooms yet.",
+      "create_room": "Create Room",
+      "create_room_button": "Create Room",
+      "explore_community_rooms": "Explore Community Rooms",
+      "join_with_address": "Join with Address",
+      "message_search": "Message Search",
+      "rooms": "Rooms"
     }
   },
   "Settings": {
@@ -244,6 +256,14 @@
     "personal_pack": "Personal Pack",
     "unknown": "Unknown"
   },
+  "ClientRoot": {
+    "heating_up": "Heating up",
+    "clear_cache_reload": "Clear Cache and Reload",
+    "logout": "Logout",
+    "failed_to_load": "Failed to load. {{error}}",
+    "failed_to_start": "Failed to start. {{error}}",
+    "retry": "Retry"
+  },
   "EventReaders": {
     "seen_by": "Seen by"
   },
@@ -300,5 +320,33 @@
     "cancel": "Cancel",
     "json_content": "JSON Content",
     "edit": "Edit"
+  },
+  "Features": {
+    "CreateRoomForm": {
+      "access": "Access",
+      "name": "Name",
+      "topic_optional": "Topic (Optional)",
+      "options": "Options",
+      "advance_options": "Advance Options",
+      "create": "Create",
+      "encryption": "End-to-End Encryption",
+      "encryption_description": "Once this feature is enabled, it can't be disabled after the room is created.",
+      "knock_to_join": "Knock to Join",
+      "knock_to_join_description": "Anyone can send request to join this room.",
+      "allow_federation": "Allow Federation",
+      "allow_federation_description": "Users from other servers can join."
+    },
+    "CreateSpaceForm": {
+      "access": "Access",
+      "name": "Name",
+      "topic_optional": "Topic (Optional)",
+      "options": "Options",
+      "advance_options": "Advance Options",
+      "create": "Create",
+      "knock_to_join": "Knock to Join",
+      "knock_to_join_description": "Anyone can send request to join this space.",
+      "allow_federation": "Allow Federation",
+      "allow_federation_description": "Users from other servers can join."
+    }
   }
 }

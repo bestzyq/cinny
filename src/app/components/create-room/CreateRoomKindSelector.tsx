@@ -85,9 +85,9 @@ export function CreateRoomKindSelector({
           before={<Icon size="400" src={getIcon(CreateRoomKind.Public)} />}
           after={value === CreateRoomKind.Public && <Icon src={Icons.Check} />}
         >
-          <Text size="H6">Public</Text>
+          <Text size="H6">{t('Components.CreateRoomKindSelector.public', 'Public')}</Text>
           <Text size="T300" priority="300">
-            Anyone with the address can join.
+            {t('Components.CreateRoomKindSelector.public_description', 'Anyone with the address can join.')}
           </Text>
         </SettingTile>
       </SequenceCard>

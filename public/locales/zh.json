@@ -185,6 +185,18 @@
       "password_mismatch": "密码不匹配",
       "invalid_username": "无效的用户名",
       "invalid_password": "密码太短或太弱"
+    },
+    "Home": {
+      "title": "首页",
+      "mark_as_read": "标记为已读",
+      "no_rooms": "暂无房间",
+      "no_rooms_description": "您还没有任何房间。",
+      "create_room": "创建房间",
+      "create_room_button": "创建房间",
+      "explore_community_rooms": "探索社区房间",
+      "join_with_address": "通过地址加入",
+      "message_search": "消息搜索",
+      "rooms": "房间"
     }
   },
   "Settings": {
@@ -244,6 +256,14 @@
     "personal_pack": "个人包",
     "unknown": "未知"
   },
+  "ClientRoot": {
+    "heating_up": "正在启动",
+    "clear_cache_reload": "清除缓存并重新加载",
+    "logout": "退出登录",
+    "failed_to_load": "加载失败。{{error}}",
+    "failed_to_start": "启动失败。{{error}}",
+    "retry": "重试"
+  },
   "EventReaders": {
     "seen_by": "已查看者"
   },
@@ -300,5 +320,33 @@
     "cancel": "取消",
     "json_content": "JSON 内容",
     "edit": "编辑"
+  },
+  "Features": {
+    "CreateRoomForm": {
+      "access": "访问权限",
+      "name": "名称",
+      "topic_optional": "主题（可选）",
+      "options": "选项",
+      "advance_options": "高级选项",
+      "create": "创建",
+      "encryption": "端到端加密",
+      "encryption_description": "此功能启用后，房间创建后将无法禁用。",
+      "knock_to_join": "敲门加入",
+      "knock_to_join_description": "任何人都可以发送请求加入此房间。",
+      "allow_federation": "允许联邦",
+      "allow_federation_description": "其他服务器的用户可以加入。"
+    },
+    "CreateSpaceForm": {
+      "access": "访问权限",
+      "name": "名称",
+      "topic_optional": "主题（可选）",
+      "options": "选项",
+      "advance_options": "高级选项",
+      "create": "创建",
+      "knock_to_join": "敲门加入",
+      "knock_to_join_description": "任何人都可以发送请求加入此空间。",
+      "allow_federation": "允许联邦",
+      "allow_federation_description": "其他服务器的用户可以加入。"
+    }
   }
 }
