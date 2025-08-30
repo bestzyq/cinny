@@ -1,4 +1,5 @@
 import React, { CSSProperties, ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Box, Chip, Icon, Icons, Text, toRem } from 'folds';
 import { IContent } from 'matrix-js-sdk';
 import { JUMBO_EMOJI_REG, URL_REG } from '../../utils/regex';
@@ -190,6 +191,7 @@ type MImageProps = {
   outlined?: boolean;
 };
 export function MImage({ content, renderImageContent, outlined }: MImageProps) {
+  const { t } = useTranslation();
   const imgInfo = content?.info;
   const mxcUrl = content.file?.url ?? content.url;
   if (typeof mxcUrl !== 'string') {
@@ -205,7 +207,7 @@ export function MImage({ content, renderImageContent, outlined }: MImageProps) {
         }}
       >
         {renderImageContent({
-          body: content.body || 'Image',
+          body: content.body || t('MsgTypeRenderers.image', 'Image'),
           info: imgInfo,
           mimeType: imgInfo?.mimetype,
           url: mxcUrl,
@@ -232,6 +234,7 @@ type MVideoProps = {
   outlined?: boolean;
 };
 export function MVideo({ content, renderAsFile, renderVideoContent, outlined }: MVideoProps) {
+  const { t } = useTranslation();
   const videoInfo = content?.info;
   const mxcUrl = content.file?.url ?? content.url;
   const safeMimeType = getBlobSafeMimeType(videoInfo?.mimetype ?? '');
@@ -245,7 +248,7 @@ export function MVideo({ content, renderAsFile, renderVideoContent, outlined }: 
 
   const height = scaleYDimension(videoInfo.w || 400, 400, videoInfo.h || 400);
 
-  const filename = content.filename ?? content.body ?? 'Video';
+  const filename = content.filename ?? content.body ?? t('MsgTypeRenderers.video', 'Video');
 
   return (
     <Attachment outlined={outlined}>

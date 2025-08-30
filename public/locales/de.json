@@ -3,5 +3,302 @@
     "RoomCommon": {
       "changed_room_name": " hat den Raum Name geändert"
     }
+  },
+  "Components": {
+    "PasswordStage": {
+      "account_password": "Konto-Passwort",
+      "auth_instruction": "Um diese Aktion auszuführen, müssen Sie sich durch Eingabe Ihres Konto-Passworts authentifizieren.",
+      "password": "Passwort",
+      "invalid_password": "Ungültiges Passwort!",
+      "continue": "Weiter"
+    },
+    "EmailStage": {
+      "email": "E-Mail",
+      "send_verification_email": "Bestätigungs-E-Mail senden",
+      "cancel": "Abbrechen",
+      "verify_email": "E-Mail bestätigen",
+      "failed_to_send": "Fehler beim Senden der Bestätigungs-E-Mail-Anfrage.",
+      "verification_sent": "Bestätigungsanfrage gesendet",
+      "check_email": "Bitte überprüfen Sie Ihre E-Mail \"{{email}}\" und bestätigen Sie, bevor Sie fortfahren.",
+      "continue": "Weiter",
+      "provide_email": "E-Mail angeben",
+      "please_provide_email": "Bitte geben Sie eine E-Mail an, um eine Bestätigungsanfrage zu senden.",
+      "sending_verification": "Bestätigungs-E-Mail wird gesendet..."
+    },
+    "ReCaptchaStage": {
+      "cancel": "Abbrechen",
+      "invalid_data": "Ungültige Daten",
+      "no_valid_data": "Keine gültigen Daten gefunden, um mit der ReCAPTCHA-Verifizierung fortzufahren.",
+      "check_box": "Bitte aktivieren Sie das Kontrollkästchen unten, um fortzufahren."
+    },
+    "RegistrationTokenStage": {
+      "registration_token": "Registrierungs-Token",
+      "retry": "Erneut versuchen",
+      "cancel": "Abbrechen",
+      "invalid_token": "Der angegebene Registrierungs-Token ist ungültig.",
+      "please_submit_token": "Bitte geben Sie den von Ihrem Serveradministrator bereitgestellten Registrierungs-Token ein."
+    },
+    "SSOStage": {
+      "sso_login": "SSO-Anmeldung",
+      "auth_instruction": "Um diese Aktion auszuführen, müssen Sie sich über SSO-Anmeldung authentifizieren.",
+      "continue": "Weiter",
+      "continue_with_sso": "Mit SSO fortfahren"
+    },
+    "TermsStage": {
+      "retry": "Erneut versuchen",
+      "cancel": "Abbrechen",
+      "failed_to_submit": "Fehler beim Übermitteln der Zustimmung zu den Allgemeinen Geschäftsbedingungen."
+    },
+    "AdditionalCreatorInput": {
+      "founders": "Gründer",
+      "founders_description": "Besondere privilegierte Benutzer können bei der Erstellung zugewiesen werden. Diese Benutzer haben erweiterte Kontrollberechtigungen und können nur während Upgrades geändert werden.",
+      "enter": "Eingabe",
+      "username_placeholder": "@benutzername:server",
+      "no_suggestions": "Keine Vorschläge",
+      "provide_user_id": "Bitte geben Sie die Benutzer-ID ein und drücken Sie die Eingabetaste."
+    },
+    "CreateRoomAliasInput": {
+      "address_optional": "Adresse (optional)",
+      "pick_unique_address": "Wählen Sie eine eindeutige Adresse, um sie auffindbar zu machen.",
+      "address_taken": "Diese Adresse ist bereits vergeben. Bitte wählen Sie eine andere Adresse."
+    },
+    "CreateRoomKindSelector": {
+      "restricted": "Eingeschränkt",
+      "restricted_description": "Nur Mitglieder des übergeordneten Raums können beitreten.",
+      "private": "Privat",
+      "private_description": "Nur eingeladene Personen können beitreten.",
+      "public": "Öffentlich",
+      "public_description": "Jeder mit der Adresse kann beitreten."
+    },
+    "RoomVersionSelector": {
+      "version": "Version",
+      "versions": "Versionen"
+    },
+    "Editor": {
+      "bold": "Fett",
+      "italic": "Kursiv",
+      "underline": "Unterstrichen",
+      "strike_through": "Durchgestrichen",
+      "inline_code": "Inline-Code",
+      "spoiler": "Spoiler",
+      "block_quote": "Blockzitat",
+      "block_code": "Codeblock",
+      "ordered_list": "Geordnete Liste",
+      "unordered_list": "Ungeordnete Liste",
+      "heading_1": "Überschrift 1",
+      "heading_2": "Überschrift 2",
+      "heading_3": "Überschrift 3",
+      "exit_formatting": "Formatierung beenden",
+      "disable_markdown": "Markdown deaktivieren",
+      "enable_markdown": "Markdown aktivieren"
+    }
+  },
+  "Pages": {
+    "Login": {
+      "login": "Anmelden",
+      "no_support": "Dieser Client unterstützt die Anmeldung auf dem \"{{server}}\" Server nicht. Keine passwortbasierten und SSO-Anmeldemethoden gefunden.",
+      "no_account": "Noch kein Konto?",
+      "register": "Registrieren"
+    },
+    "PasswordLoginForm": {
+      "hint": "Hinweis",
+      "username_hint": "Benutzername:",
+      "matrix_id_hint": "Matrix-ID:",
+      "email_hint": "E-Mail:",
+      "username": "Benutzername",
+      "server_not_allowed": "Ihre Client-Instanz erlaubt keine Anmeldung mit benutzerdefinierten Servern.",
+      "failed_find_server": "Fehler beim Finden Ihres Matrix-ID-Servers.",
+      "password": "Passwort",
+      "invalid_credentials": "Ungültiger Benutzername oder Passwort.",
+      "account_deactivated": "Dieses Konto wurde deaktiviert.",
+      "invalid_request": "Anmeldung fehlgeschlagen. Einige Ihrer Anforderungsdaten sind ungültig.",
+      "rate_limited": "Anmeldung fehlgeschlagen. Ihre Anmeldeanforderung wurde vom Server gedrosselt, bitte versuchen Sie es später erneut.",
+      "unknown_error": "Anmeldung fehlgeschlagen. Unbekannter Grund.",
+      "forget_password": "Passwort vergessen?",
+      "login_button": "Anmelden"
+    },
+    "Register": {
+      "register": "Registrieren",
+      "have_account": "Bereits ein Konto?",
+      "login": "Anmelden",
+      "registration_disabled": "Die Registrierung ist auf diesem Server deaktiviert.",
+      "rate_limited": "Sie sind gedrosselt! Bitte versuchen Sie es später erneut.",
+      "invalid_request": "Ungültige Anfrage! Fehler beim Abrufen von Registrierungsoptionen.",
+      "not_support_registration": "Diese Anwendung unterstützt keine Registrierung auf diesem Server."
+    },
+    "ResetPassword": {
+      "reset_password": "Passwort zurücksetzen",
+      "remember_password": "Passwort merken?",
+      "login": "Anmelden",
+      "reset_success": "Passwort wurde erfolgreich zurückgesetzt. Bitte melden Sie sich mit Ihrem neuen Passwort an.",
+      "homeserver_email": "Homeserver {{server}} sendet Ihnen eine E-Mail zum Zurücksetzen Ihres Passworts.",
+      "email": "E-Mail",
+      "new_password": "Neues Passwort",
+      "confirm_password": "Passwort bestätigen",
+      "reset_button": "Passwort zurücksetzen"
+    },
+    "ServerPicker": {
+      "homeserver_list": "Homeserver-Liste"
+    },
+    "AuthLayout": {
+      "homeserver": "Homeserver",
+      "looking_for_homeserver": "Suche nach Homeserver...",
+      "failed_to_find_homeserver": "Fehler beim Finden des Homeservers.",
+      "failed_to_connect_config": "Verbindung fehlgeschlagen. Gefundene Homeserver-Konfiguration {{host}} scheint unbrauchbar zu sein.",
+      "failed_to_connect_invalid": "Verbindung fehlgeschlagen. Homeserver-Konfiguration base_url scheint ungültig zu sein.",
+      "connecting_to": "Verbinde mit {{url}}",
+      "failed_to_connect": "Verbindung fehlgeschlagen. Homeserver ist derzeit nicht verfügbar oder existiert nicht.",
+      "loading_auth_flow": "Lade Authentifizierungsablauf...",
+      "failed_to_get_auth_flow": "Fehler beim Abrufen der Authentifizierungsablauf-Informationen."
+    },
+    "AuthFooter": {
+      "about": "Über",
+      "powered_by_matrix": "Unterstützt von Matrix"
+    },
+    "SSOLogin": {
+      "continue_with_sso": "Mit SSO fortfahren",
+      "continue_with": "Fortfahren mit {{name}}"
+    },
+    "WelcomePage": {
+      "welcome_to_cinny": "Willkommen bei Cinny",
+      "subtitle": "Noch ein weiterer Matrix-Client.",
+      "source_code": "Quellcode",
+      "support": "Support"
+    },
+    "SyncStatus": {
+      "connecting": "Verbinde...",
+      "connection_lost_reconnecting": "Verbindung verloren! Verbinde erneut...",
+      "connection_lost": "Verbindung verloren!"
+    },
+    "HomeTab": {
+      "mark_as_read": "Als gelesen markieren",
+      "home": "Startseite"
+    },
+    "SettingsTab": {
+      "user_settings": "Benutzereinstellungen"
+    },
+    "PasswordRegisterForm": {
+      "username": "Benutzername",
+      "password": "Passwort",
+      "confirm_password": "Passwort bestätigen",
+      "register_button": "Registrieren",
+      "password_mismatch": "Passwörter stimmen nicht überein",
+      "invalid_username": "Ungültiger Benutzername",
+      "invalid_password": "Passwort ist zu kurz oder zu schwach"
+    }
+  },
+  "Settings": {
+    "general": "Allgemein",
+    "account": "Konto",
+    "notifications": "Benachrichtigungen",
+    "devices": "Geräte",
+    "emojis_stickers": "Emojis & Sticker",
+    "developer_tools": "Entwicklerwerkzeuge",
+    "about": "Über",
+    "appearance": "Erscheinungsbild",
+    "system_theme": "System-Thema",
+    "system_theme_description": "Wählen Sie helles oder dunkles Thema basierend auf Systemeinstellungen.",
+    "theme": "Thema",
+    "theme_description": "Thema, das verwendet wird, wenn System-Thema nicht aktiviert ist.",
+    "monochrome_mode": "Monochrom-Modus",
+    "twitter_emoji": "Twitter-Emoji",
+    "page_zoom": "Seitenzoom",
+    "formatting": "Formatierung",
+    "year": "Jahr",
+    "month": "Monat",
+    "day_of_month": "Tag des Monats",
+    "day_of_week": "Wochentag",
+    "save": "Speichern",
+    "date_format": "Datumsformat",
+    "date_time": "Datum & Uhrzeit",
+    "24_hour_time_format": "24-Stunden-Uhrzeitformat",
+    "editor": "Editor",
+    "enter_for_newline": "Eingabe für Zeilenumbruch",
+    "enter_for_newline_description": "Verwenden Sie Strg+EINGABE zum Senden der Nachricht, EINGABE für Zeilenumbruch.",
+    "markdown_formatting": "Markdown-Formatierung",
+    "hide_typing_read_receipts": "Schreibstatus & Lesebestätigungen ausblenden",
+    "hide_typing_read_receipts_description": "Schalten Sie Schreibstatus und Lesebestätigungen aus, um Ihre Privatsphäre zu schützen.",
+    "messages": "Nachrichten",
+    "message_layout": "Nachrichtenlayout",
+    "message_spacing": "Nachrichtenabstand",
+    "legacy_username_color": "Traditionelle Benutzernamenfarbe",
+    "hide_membership_change": "Mitgliedschaftsänderung ausblenden",
+    "hide_profile_change": "Profiländerung ausblenden",
+    "disable_media_auto_load": "Automatisches Laden von Medien deaktivieren",
+    "url_preview": "URL-Vorschau",
+    "url_preview_encrypted_room": "URL-Vorschau in verschlüsseltem Raum",
+    "show_hidden_events": "Versteckte Ereignisse anzeigen"
+  },
+  "EmojiBoard": {
+    "sticker": "Sticker",
+    "emoji": "Emoji",
+    "recent": "Kürzlich",
+    "search_or_text_reaction": "Suche oder Textreaktion",
+    "search": "Suche",
+    "react": "Reagieren",
+    "search_results": "Suchergebnisse",
+    "no_results_found": "Keine Ergebnisse gefunden",
+    "no_sticker_packs": "Keine Sticker-Packs!",
+    "add_stickers_from_settings": "Fügen Sie Sticker aus Benutzer-, Raum- oder Space-Einstellungen hinzu.",
+    "unknown_pack": "Unbekanntes Pack",
+    "personal_pack": "Persönliches Pack",
+    "unknown": "Unbekannt"
+  },
+  "EventReaders": {
+    "seen_by": "Gesehen von"
+  },
+  "ImageEditor": {
+    "image_editor": "Bildeditor",
+    "save": "Speichern"
+  },
+  "ImagePackView": {
+    "emojis_and_stickers": "Emojis & Sticker"
+  },
+  "ImageViewer": {
+    "download": "Herunterladen"
+  },
+  "InviteUserPrompt": {
+    "invite": "Einladen",
+    "user_id": "Benutzer-ID",
+    "username_server_placeholder": "@benutzername:server",
+    "reason_optional": "Grund (optional)",
+    "invite_button": "Einladen"
+  },
+  "JoinAddressPrompt": {
+    "join_with_address": "Mit Adresse beitreten",
+    "enter_public_address": "Geben Sie eine öffentliche Adresse ein, um der Community beizutreten. Adressformat:",
+    "address": "Adresse",
+    "invalid_address": "Ungültige Adresse",
+    "open": "Öffnen"
+  },
+  "LeaveRoomPrompt": {
+    "leave_room": "Raum verlassen",
+    "confirm_leave": "Sind Sie sicher, dass Sie diesen Raum verlassen möchten?",
+    "failed_to_leave": "Fehler beim Verlassen des Raums!",
+    "leaving": "Verlasse...",
+    "leave": "Verlassen"
+  },
+  "LeaveSpacePrompt": {
+    "leave_space": "Space verlassen",
+    "confirm_leave": "Sind Sie sicher, dass Sie diesen Space verlassen möchten?",
+    "failed_to_leave": "Fehler beim Verlassen des Space!",
+    "leaving": "Verlasse...",
+    "leave": "Verlassen"
+  },
+  "MsgTypeRenderers": {
+    "image": "Bild",
+    "video": "Video",
+    "audio": "Audio",
+    "unnamed_file": "Unbenannte Datei",
+    "file": "Datei",
+    "open_location": "Ort öffnen",
+    "sticker": "Sticker"
+  },
+  "AccountDataEditor": {
+    "account_data": "Kontodaten",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "json_content": "JSON-Inhalt",
+    "edit": "Bearbeiten"
   }
 }

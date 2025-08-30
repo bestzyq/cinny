@@ -9,6 +9,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 import { AuthFooter } from './AuthFooter';
 import * as css from './styles.css';
@@ -45,6 +46,7 @@ const currentAuthPath = (pathname: string): string => {
 };
 
 function AuthLayoutLoading({ message }: { message: string }) {
+  const { t } = useTranslation();
   return (
     <Box justifyContent="Center" alignItems="Center" gap="200">
       <Spinner size="100" variant="Secondary" />
@@ -56,6 +58,7 @@ function AuthLayoutLoading({ message }: { message: string }) {
 }
 
 function AuthLayoutError({ message }: { message: string }) {
+  const { t } = useTranslation();
   return (
     <Box justifyContent="Center" alignItems="Center" gap="200">
       <Text align="Center" style={{ color: color.Critical.Main }} size="T300">
@@ -66,6 +69,7 @@ function AuthLayoutError({ message }: { message: string }) {
 }
 
 export function AuthLayout() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   const { server: urlEncodedServer } = useParams();
@@ -141,7 +145,7 @@ export function AuthLayout() {
           <Box className={css.AuthCardContent} direction="Column">
             <Box direction="Column" gap="100">
               <Text as="label" size="L400" priority="300">
-                Homeserver
+                {t('Pages.AuthLayout.homeserver', 'Homeserver')}
               </Text>
               <ServerPicker
                 server={server}
@@ -151,18 +155,18 @@ export function AuthLayout() {
               />
             </Box>
             {discoveryState.status === AsyncStatus.Loading && (
-              <AuthLayoutLoading message="Looking for homeserver..." />
+              <AuthLayoutLoading message={t('Pages.AuthLayout.looking_for_homeserver', 'Looking for homeserver...')} />
             )}
             {discoveryState.status === AsyncStatus.Error && (
-              <AuthLayoutError message="Failed to find homeserver." />
+              <AuthLayoutError message={t('Pages.AuthLayout.failed_to_find_homeserver', 'Failed to find homeserver.')} />
             )}
             {autoDiscoveryError?.action === AutoDiscoveryAction.FAIL_PROMPT && (
               <AuthLayoutError
-                message={`Failed to connect. Homeserver configuration found with ${autoDiscoveryError.host} appears unusable.`}
+                message={t('Pages.AuthLayout.failed_to_connect_config', 'Failed to connect. Homeserver configuration found with {{host}} appears unusable.', { host: autoDiscoveryError.host })}
               />
             )}
             {autoDiscoveryError?.action === AutoDiscoveryAction.FAIL_ERROR && (
-              <AuthLayoutError message="Failed to connect. Homeserver configuration base_url appears invalid." />
+              <AuthLayoutError message={t('Pages.AuthLayout.failed_to_connect_invalid', 'Failed to connect. Homeserver configuration base_url appears invalid.')} />
             )}
             {discoveryState.status === AsyncStatus.Success && autoDiscoveryInfo && (
               <AuthServerProvider value={discoveryState.data.serverName}>

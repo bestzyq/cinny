@@ -11,6 +11,7 @@ import {
   color,
 } from 'folds';
 import React, { ChangeEventHandler, useCallback, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   AuthDict,
   AuthType,
@@ -184,6 +185,7 @@ export function PasswordRegisterForm({
   defaultEmail,
   defaultRegisterToken,
 }: PasswordRegisterFormProps) {
+  const { t } = useTranslation();
   const serverDiscovery = useAutoDiscoveryInfo();
   const baseUrl = serverDiscovery['m.homeserver'].base_url;
   const mx = useMemo(() => createClient({ baseUrl }), [baseUrl]);
@@ -259,7 +261,7 @@ export function PasswordRegisterForm({
       <Box as="form" onSubmit={handleSubmit} direction="Inherit" gap="400">
         <Box direction="Column" gap="100">
           <Text as="label" size="L400" priority="300">
-            Username
+            {t('Pages.PasswordRegisterForm.username', 'Username')}
           </Text>
           <Input
             variant="Background"
@@ -284,7 +286,7 @@ export function PasswordRegisterForm({
             <>
               <Box direction="Column" gap="100">
                 <Text as="label" size="L400" priority="300">
-                  Password
+                  {t('Pages.PasswordRegisterForm.password', 'Password')}
                 </Text>
                 <PasswordInput
                   ref={passRef}
@@ -314,7 +316,7 @@ export function PasswordRegisterForm({
               </Box>
               <Box direction="Column" gap="100">
                 <Text as="label" size="L400" priority="300">
-                  Confirm Password
+                  {t('Pages.PasswordRegisterForm.confirm_password', 'Confirm Password')}
                 </Text>
                 <PasswordInput
                   ref={confPassRef}
@@ -391,7 +393,7 @@ export function PasswordRegisterForm({
         <span data-spacing-node />
         <Button variant="Primary" size="500" type="submit">
           <Text as="span" size="B500">
-            Register
+            {t('Pages.PasswordRegisterForm.register_button', 'Register')}
           </Text>
         </Button>
       </Box>

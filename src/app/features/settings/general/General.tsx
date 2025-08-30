@@ -29,6 +29,7 @@ import {
 } from 'folds';
 import { isKeyHotkey } from 'is-hotkey';
 import FocusTrap from 'focus-trap-react';
+import { useTranslation } from 'react-i18next';
 import { Page, PageContent, PageHeader } from '../../../components/page';
 import { SequenceCard } from '../../../components/sequence-card';
 import { useSetting } from '../../../state/hooks/settings';
@@ -139,6 +140,7 @@ function SelectTheme({ disabled }: { disabled?: boolean }) {
 }
 
 function SystemThemePreferences() {
+  const { t } = useTranslation();
   const themeKind = useSystemThemeKind();
   const themeNames = useThemeNames();
   const themes = useThemes();
@@ -174,7 +176,7 @@ function SystemThemePreferences() {
   return (
     <Box wrap="Wrap" gap="400">
       <SettingTile
-        title="Light Theme:"
+        title={t('Settings.light_theme', 'Light Theme:')}
         after={
           <Chip
             variant={themeKind === ThemeKind.Light ? 'Primary' : 'Secondary'}
@@ -215,7 +217,7 @@ function SystemThemePreferences() {
         }
       />
       <SettingTile
-        title="Dark Theme:"
+        title={t('Settings.dark_theme', 'Dark Theme:')}
         after={
           <Chip
             variant={themeKind === ThemeKind.Dark ? 'Primary' : 'Secondary'}
@@ -304,13 +306,14 @@ function PageZoomInput() {
 }
 
 function Appearance() {
+  const { t } = useTranslation();
   const [systemTheme, setSystemTheme] = useSetting(settingsAtom, 'useSystemTheme');
   const [monochromeMode, setMonochromeMode] = useSetting(settingsAtom, 'monochromeMode');
   const [twitterEmoji, setTwitterEmoji] = useSetting(settingsAtom, 'twitterEmoji');
 
   return (
     <Box direction="Column" gap="100">
-      <Text size="L400">Appearance</Text>
+      <Text size="L400">{t('Settings.appearance', 'Appearance')}</Text>
       <SequenceCard
         className={SequenceCardStyle}
         variant="SurfaceVariant"
@@ -318,8 +321,8 @@ function Appearance() {
         gap="400"
       >
         <SettingTile
-          title="System Theme"
-          description="Choose between light and dark theme based on system preference."
+          title={t('Settings.system_theme', 'System Theme')}
+          description={t('Settings.system_theme_description', 'Choose between light and dark theme based on system preference.')}
           after={<Switch variant="Primary" value={systemTheme} onChange={setSystemTheme} />}
         />
         {systemTheme && <SystemThemePreferences />}
@@ -327,28 +330,28 @@ function Appearance() {
 
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="Theme"
-          description="Theme to use when system theme is not enabled."
+          title={t('Settings.theme', 'Theme')}
+          description={t('Settings.theme_description', 'Theme to use when system theme is not enabled.')}
           after={<SelectTheme disabled={systemTheme} />}
         />
       </SequenceCard>
 
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="Monochrome Mode"
+          title={t('Settings.monochrome_mode', 'Monochrome Mode')}
           after={<Switch variant="Primary" value={monochromeMode} onChange={setMonochromeMode} />}
         />
       </SequenceCard>
 
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="Twitter Emoji"
+          title={t('Settings.twitter_emoji', 'Twitter Emoji')}
           after={<Switch variant="Primary" value={twitterEmoji} onChange={setTwitterEmoji} />}
         />
       </SequenceCard>
 
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
-        <SettingTile title="Page Zoom" after={<PageZoomInput />} />
+        <SettingTile title={t('Settings.page_zoom', 'Page Zoom')} after={<PageZoomInput />} />
       </SequenceCard>
     </Box>
   );
@@ -662,6 +665,7 @@ function PresetDateFormat({ value, onChange }: PresetDateFormatProps) {
 }
 
 function SelectDateFormat() {
+  const { t } = useTranslation();
   const [dateFormatString, setDateFormatString] = useSetting(settingsAtom, 'dateFormatString');
   const [selectedDateFormat, setSelectedDateFormat] = useState(dateFormatString);
   const customDateFormat = selectedDateFormat === '';
@@ -676,7 +680,7 @@ function SelectDateFormat() {
   return (
     <>
       <SettingTile
-        title="Date Format"
+        title={t('Settings.date_format', 'Date Format')}
         description={customDateFormat ? dayjs().format(dateFormatString) : ''}
         after={<PresetDateFormat value={selectedDateFormat} onChange={handlePresetChange} />}
       />
@@ -688,6 +692,7 @@ function SelectDateFormat() {
 }
 
 function DateAndTime() {
+  const { t } = useTranslation();
   const [hour24Clock, setHour24Clock] = useSetting(settingsAtom, 'hour24Clock');
 
   return (
@@ -695,7 +700,7 @@ function DateAndTime() {
       <Text size="L400">Date & Time</Text>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="24-Hour Time Format"
+          title={t('Settings.24_hour_time_format', '24-Hour Time Format')}
           after={<Switch variant="Primary" value={hour24Clock} onChange={setHour24Clock} />}
         />
       </SequenceCard>
@@ -708,6 +713,7 @@ function DateAndTime() {
 }
 
 function Editor() {
+  const { t } = useTranslation();
   const [enterForNewline, setEnterForNewline] = useSetting(settingsAtom, 'enterForNewline');
   const [isMarkdown, setIsMarkdown] = useSetting(settingsAtom, 'isMarkdown');
   const [hideActivity, setHideActivity] = useSetting(settingsAtom, 'hideActivity');
@@ -717,23 +723,23 @@ function Editor() {
       <Text size="L400">Editor</Text>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="ENTER for Newline"
-          description={`Use ${
+          title={t('Settings.enter_for_newline', 'ENTER for Newline')}
+          description={t('Settings.enter_for_newline_description', `Use ${
             isMacOS() ? KeySymbol.Command : 'Ctrl'
-          } + ENTER to send message and ENTER for newline.`}
+          } + ENTER to send message and ENTER for newline.`)}
           after={<Switch variant="Primary" value={enterForNewline} onChange={setEnterForNewline} />}
         />
       </SequenceCard>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="Markdown Formatting"
+          title={t('Settings.markdown_formatting', 'Markdown Formatting')}
           after={<Switch variant="Primary" value={isMarkdown} onChange={setIsMarkdown} />}
         />
       </SequenceCard>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="Hide Typing & Read Receipts"
-          description="Turn off both typing status and read receipts to keep your activity private."
+          title={t('Settings.hide_typing_read_receipts', 'Hide Typing & Read Receipts')}
+          description={t('Settings.hide_typing_read_receipts_description', 'Turn off both typing status and read receipts to keep your activity private.')}
           after={<Switch variant="Primary" value={hideActivity} onChange={setHideActivity} />}
         />
       </SequenceCard>
@@ -880,6 +886,7 @@ function SelectMessageSpacing() {
 }
 
 function Messages() {
+  const { t } = useTranslation();
   const [legacyUsernameColor, setLegacyUsernameColor] = useSetting(
     settingsAtom,
     'legacyUsernameColor'
@@ -901,14 +908,14 @@ function Messages() {
     <Box direction="Column" gap="100">
       <Text size="L400">Messages</Text>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
-        <SettingTile title="Message Layout" after={<SelectMessageLayout />} />
+        <SettingTile title={t('Settings.message_layout', 'Message Layout')} after={<SelectMessageLayout />} />
       </SequenceCard>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
-        <SettingTile title="Message Spacing" after={<SelectMessageSpacing />} />
+        <SettingTile title={t('Settings.message_spacing', 'Message Spacing')} after={<SelectMessageSpacing />} />
       </SequenceCard>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="Legacy Username Color"
+          title={t('Settings.legacy_username_color', 'Legacy Username Color')}
           after={
             <Switch
               variant="Primary"
@@ -920,7 +927,7 @@ function Messages() {
       </SequenceCard>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="Hide Membership Change"
+          title={t('Settings.hide_membership_change', 'Hide Membership Change')}
           after={
             <Switch
               variant="Primary"
@@ -932,7 +939,7 @@ function Messages() {
       </SequenceCard>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="Hide Profile Change"
+          title={t('Settings.hide_profile_change', 'Hide Profile Change')}
           after={
             <Switch
               variant="Primary"
@@ -944,7 +951,7 @@ function Messages() {
       </SequenceCard>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="Disable Media Auto Load"
+          title={t('Settings.disable_media_auto_load', 'Disable Media Auto Load')}
           after={
             <Switch
               variant="Primary"
@@ -956,19 +963,19 @@ function Messages() {
       </SequenceCard>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="Url Preview"
+          title={t('Settings.url_preview', 'Url Preview')}
           after={<Switch variant="Primary" value={urlPreview} onChange={setUrlPreview} />}
         />
       </SequenceCard>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="Url Preview in Encrypted Room"
+          title={t('Settings.enc_url_preview', 'Url Preview in Encrypted Room')}
           after={<Switch variant="Primary" value={encUrlPreview} onChange={setEncUrlPreview} />}
         />
       </SequenceCard>
       <SequenceCard className={SequenceCardStyle} variant="SurfaceVariant" direction="Column">
         <SettingTile
-          title="Show Hidden Events"
+          title={t('Settings.show_hidden_events', 'Show Hidden Events')}
           after={
             <Switch variant="Primary" value={showHiddenEvents} onChange={setShowHiddenEvents} />
           }
@@ -982,6 +989,7 @@ type GeneralProps = {
   requestClose: () => void;
 };
 export function General({ requestClose }: GeneralProps) {
+  const { t } = useTranslation();
   return (
     <Page>
       <PageHeader outlined={false}>

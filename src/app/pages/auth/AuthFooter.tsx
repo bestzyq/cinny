@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Text } from 'folds';
+import { useTranslation } from 'react-i18next';
 import * as css from './styles.css';
 
 export function AuthFooter() {

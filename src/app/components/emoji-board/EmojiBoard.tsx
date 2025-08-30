@@ -28,6 +28,7 @@ import {
   toRem,
 } from 'folds';
 import FocusTrap from 'focus-trap-react';
+import { useTranslation } from 'react-i18next';
 import { isKeyHotkey } from 'is-hotkey';
 import classNames from 'classnames';
 import { MatrixClient, Room } from 'matrix-js-sdk';
@@ -174,6 +175,7 @@ function EmojiBoardTabs({
   tab: EmojiBoardTab;
   onTabChange: (tab: EmojiBoardTab) => void;
 }) {
+  const { t } = useTranslation();
   return (
     <Box gap="100">
       <Badge
@@ -185,7 +187,7 @@ function EmojiBoardTabs({
         onClick={() => onTabChange(EmojiBoardTab.Sticker)}
       >
         <Text as="span" size="L400">
-          Sticker
+          {t('EmojiBoard.sticker')}
         </Text>
       </Badge>
       <Badge
@@ -197,7 +199,7 @@ function EmojiBoardTabs({
         onClick={() => onTabChange(EmojiBoardTab.Emoji)}
       >
         <Text as="span" size="L400">
-          Emoji
+          {t('EmojiBoard.emoji')}
         </Text>
       </Badge>
     </Box>
@@ -335,6 +337,7 @@ export function StickerItem({
 }
 
 function RecentEmojiSidebarStack({ onItemClick }: { onItemClick: (id: string) => void }) {
+  const { t } = useTranslation();
   const activeGroupId = useAtomValue(activeGroupIdAtom);
 
   return (
@@ -342,7 +345,7 @@ function RecentEmojiSidebarStack({ onItemClick }: { onItemClick: (id: string) =>
       <SidebarBtn
         active={activeGroupId === RECENT_GROUP_ID}
         id={RECENT_GROUP_ID}
-        label="Recent"
+        label={t('EmojiBoard.recent')}
         onItemClick={() => onItemClick(RECENT_GROUP_ID)}
       >
         <Icon src={Icons.RecentClock} filled={activeGroupId === RECENT_GROUP_ID} />
@@ -364,19 +367,20 @@ function ImagePackSidebarStack({
   onItemClick: (id: string) => void;
   useAuthentication?: boolean;
 }) {
+  const { t } = useTranslation();
   const activeGroupId = useAtomValue(activeGroupIdAtom);
   return (
     <SidebarStack>
       {usage === ImageUsage.Emoticon && <SidebarDivider />}
       {packs.map((pack) => {
         let label = pack.meta.name;
-        if (!label) label = isUserId(pack.id) ? 'Personal Pack' : mx.getRoom(pack.id)?.name;
+        if (!label) label = isUserId(pack.id) ? t('EmojiBoard.personal_pack') : mx.getRoom(pack.id)?.name;
         return (
           <SidebarBtn
             active={activeGroupId === pack.id}
             key={pack.id}
             id={pack.id}
-            label={label || 'Unknown Pack'}
+            label={label || t('EmojiBoard.unknown_pack')}
             onItemClick={onItemClick}
           >
             <img
@@ -389,7 +393,7 @@ function ImagePackSidebarStack({
                 mxcUrlToHttp(mx, pack.getAvatarUrl(usage) ?? '', useAuthentication) ||
                 pack.meta.avatar
               }
-              alt={label || 'Unknown Pack'}
+              alt={label || t('EmojiBoard.unknown_pack')}
             />
           </SidebarBtn>
         );
@@ -569,50 +573,53 @@ export const StickerGroups = memo(
     mx: MatrixClient;
     groups: ImagePack[];
     useAuthentication?: boolean;
-  }) => (
-    <>
-      {groups.length === 0 && (
-        <Box
-          style={{ padding: `${toRem(60)} ${config.space.S500}` }}
-          alignItems="Center"
-          justifyContent="Center"
-          direction="Column"
-          gap="300"
-        >
-          <Icon size="600" src={Icons.Sticker} />
-          <Box direction="Inherit">
-            <Text align="Center">No Sticker Packs!</Text>
-            <Text priority="300" align="Center" size="T200">
-              Add stickers from user, room or space settings.
-            </Text>
+  }) => {
+    const { t } = useTranslation();
+    return (
+      <>
+        {groups.length === 0 && (
+          <Box
+            style={{ padding: `${toRem(60)} ${config.space.S500}` }}
+            alignItems="Center"
+            justifyContent="Center"
+            direction="Column"
+            gap="300"
+          >
+            <Icon size="600" src={Icons.Sticker} />
+            <Box direction="Inherit">
+              <Text align="Center">{t('EmojiBoard.no_sticker_packs')}</Text>
+              <Text priority="300" align="Center" size="T200">
+                {t('EmojiBoard.add_stickers_from_settings')}
+              </Text>
+            </Box>
           </Box>
-        </Box>
-      )}
-      {groups.map((pack) => (
-        <EmojiGroup key={pack.id} id={pack.id} label={pack.meta.name || 'Unknown'}>
-          {pack
-            .getImages(ImageUsage.Sticker)
-            .sort((a, b) => a.shortcode.localeCompare(b.shortcode))
-            .map((image) => (
-              <StickerItem
-                key={image.shortcode}
-                label={image.body || image.shortcode}
-                type={EmojiType.Sticker}
-                data={image.url}
-                shortcode={image.shortcode}
-              >
-                <img
-                  loading="lazy"
-                  className={css.StickerImg}
-                  alt={image.body || image.shortcode}
-                  src={mxcUrlToHttp(mx, image.url, useAuthentication) ?? image.url}
-                />
-              </StickerItem>
-            ))}
-        </EmojiGroup>
-      ))}
-    </>
-  )
+        )}
+        {groups.map((pack) => (
+          <EmojiGroup key={pack.id} id={pack.id} label={pack.meta.name || 'Unknown'}>
+            {pack
+              .getImages(ImageUsage.Sticker)
+              .sort((a, b) => a.shortcode.localeCompare(b.shortcode))
+              .map((image) => (
+                <StickerItem
+                  key={image.shortcode}
+                  label={image.body || image.shortcode}
+                  type={EmojiType.Sticker}
+                  data={image.url}
+                  shortcode={image.shortcode}
+                >
+                  <img
+                    loading="lazy"
+                    className={css.StickerImg}
+                    alt={image.body || image.shortcode}
+                    src={mxcUrlToHttp(mx, image.url, useAuthentication) ?? image.url}
+                  />
+                </StickerItem>
+              ))}
+          </EmojiGroup>
+        ))}
+      </>
+    );
+  }
 );
 
 export const NativeEmojiGroups = memo(
@@ -667,6 +674,7 @@ export function EmojiBoard({
   allowTextCustomEmoji?: boolean;
   addToRecentEmoji?: boolean;
 }) {
+  const { t } = useTranslation();
   const emojiTab = tab === EmojiBoardTab.Emoji;
   const stickerTab = tab === EmojiBoardTab.Sticker;
   const usage = emojiTab ? ImageUsage.Emoticon : ImageUsage.Sticker;
@@ -823,7 +831,7 @@ export function EmojiBoard({
                 data-emoji-board-search
                 variant="SurfaceVariant"
                 size="400"
-                placeholder={allowTextCustomEmoji ? 'Search or Text Reaction ' : 'Search'}
+                placeholder={allowTextCustomEmoji ? t('EmojiBoard.search_or_text_reaction') : t('EmojiBoard.search')}
                 maxLength={50}
                 after={
                   allowTextCustomEmoji && result?.query ? (
@@ -842,7 +850,7 @@ export function EmojiBoard({
                         requestClose();
                       }}
                     >
-                      <Text size="L400">React</Text>
+                      <Text size="L400">{t('EmojiBoard.react')}</Text>
                     </Chip>
                   ) : (
                     <Icon src={Icons.Search} size="50" />
@@ -925,7 +933,7 @@ export function EmojiBoard({
                   mx={mx}
                   tab={tab}
                   id={SEARCH_GROUP_ID}
-                  label={searchedItems.length ? 'Search Results' : 'No Results found'}
+                  label={searchedItems.length ? t('EmojiBoard.search_results') : t('EmojiBoard.no_results_found')}
                   emojis={searchedItems}
                   useAuthentication={useAuthentication}
                 />

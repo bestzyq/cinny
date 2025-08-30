@@ -1,0 +1,304 @@
+{
+  "Organisms": {
+    "RoomCommon": {
+      "changed_room_name": "修改了房间名称"
+    }
+  },
+  "Components": {
+    "PasswordStage": {
+      "account_password": "账户密码",
+      "auth_instruction": "要执行此操作，您需要通过输入账户密码进行身份验证。",
+      "password": "密码",
+      "invalid_password": "密码无效！",
+      "continue": "继续"
+    },
+    "EmailStage": {
+      "email": "电子邮箱",
+      "send_verification_email": "发送验证邮件",
+      "cancel": "取消",
+      "verify_email": "验证邮箱",
+      "failed_to_send": "发送验证邮件请求失败。",
+      "verification_sent": "验证请求已发送",
+      "check_email": "请检查您的邮箱 \"{{email}}\" 并在继续前进行验证。",
+      "continue": "继续",
+      "provide_email": "提供邮箱",
+      "please_provide_email": "请提供邮箱以发送验证请求。",
+      "sending_verification": "正在发送验证邮件..."
+    },
+    "ReCaptchaStage": {
+      "cancel": "取消",
+      "invalid_data": "无效数据",
+      "no_valid_data": "未找到有效数据以继续进行 ReCAPTCHA 验证。",
+      "check_box": "请勾选下方的复选框以继续。"
+    },
+    "RegistrationTokenStage": {
+      "registration_token": "注册令牌",
+      "retry": "重试",
+      "cancel": "取消",
+      "invalid_token": "提供的注册令牌无效。",
+      "please_submit_token": "请提交由您的服务器管理员提供的注册令牌。"
+    },
+    "SSOStage": {
+      "sso_login": "SSO 登录",
+      "auth_instruction": "要执行此操作，您需要通过 SSO 登录进行身份验证。",
+      "continue": "继续",
+      "continue_with_sso": "继续使用 SSO"
+    },
+    "TermsStage": {
+      "retry": "重试",
+      "cancel": "取消",
+      "failed_to_submit": "提交条款和条件接受失败。"
+    },
+    "AdditionalCreatorInput": {
+      "founders": "创建者",
+      "founders_description": "特殊权限用户可以在创建时分配。这些用户拥有提升的控制权限，只能在升级时修改。",
+      "enter": "输入",
+      "username_placeholder": "@用户名:服务器",
+      "no_suggestions": "无建议",
+      "provide_user_id": "请提供用户ID并按Enter键。"
+    },
+    "CreateRoomAliasInput": {
+      "address_optional": "地址（可选）",
+      "pick_unique_address": "选择一个唯一的地址使其可被发现。",
+      "address_taken": "此地址已被占用。请选择其他地址。"
+    },
+    "CreateRoomKindSelector": {
+      "restricted": "受限",
+      "restricted_description": "只有父空间的成员可以加入。",
+      "private": "私密",
+      "private_description": "只有收到邀请的人可以加入。",
+      "public": "公开",
+      "public_description": "任何有地址的人都可以加入。"
+    },
+    "RoomVersionSelector": {
+      "version": "版本",
+      "versions": "版本"
+    },
+    "Editor": {
+      "bold": "粗体",
+      "italic": "斜体",
+      "underline": "下划线",
+      "strike_through": "删除线",
+      "inline_code": "行内代码",
+      "spoiler": "剧透",
+      "block_quote": "块引用",
+      "block_code": "代码块",
+      "ordered_list": "有序列表",
+      "unordered_list": "无序列表",
+      "heading_1": "标题 1",
+      "heading_2": "标题 2",
+      "heading_3": "标题 3",
+      "exit_formatting": "退出格式化",
+      "disable_markdown": "禁用 Markdown",
+      "enable_markdown": "启用 Markdown"
+    }
+  },
+  "Pages": {
+    "Login": {
+      "login": "登录",
+      "no_support": "此客户端不支持在 \"{{server}}\" 服务器上登录。未找到基于密码和 SSO 的登录方法。",
+      "no_account": "还没有账户？",
+      "register": "注册"
+    },
+    "PasswordLoginForm": {
+      "hint": "提示",
+      "username_hint": "用户名：",
+      "matrix_id_hint": "Matrix ID：",
+      "email_hint": "电子邮箱：",
+      "username": "用户名",
+      "server_not_allowed": "您的客户端实例不允许使用自定义服务器登录。",
+      "failed_find_server": "无法找到您的 Matrix ID 服务器。",
+      "password": "密码",
+      "invalid_credentials": "用户名或密码无效。",
+      "account_deactivated": "此账户已被停用。",
+      "invalid_request": "登录失败。您的请求数据部分无效。",
+      "rate_limited": "登录失败。您的登录请求已被服务器限制，请稍后再试。",
+      "unknown_error": "登录失败。未知原因。",
+      "forget_password": "忘记密码？",
+      "login_button": "登录"
+    },
+    "Register": {
+      "register": "注册",
+      "have_account": "已有账户？",
+      "login": "登录",
+      "registration_disabled": "此服务器已禁用注册功能。",
+      "rate_limited": "您已被限制！请稍后再试。",
+      "invalid_request": "无效请求！未能获取任何注册选项。",
+      "not_support_registration": "此应用程序不支持在此服务器上进行注册。"
+    },
+    "ResetPassword": {
+      "reset_password": "重置密码",
+      "remember_password": "记得密码？",
+      "login": "登录",
+      "reset_success": "密码已成功重置。请使用新密码登录。",
+      "homeserver_email": "服务器 {{server}} 将向您发送电子邮件以重置密码。",
+      "email": "邮箱",
+      "new_password": "新密码",
+      "confirm_password": "确认密码",
+      "reset_button": "重置密码"
+    },
+    "ServerPicker": {
+      "homeserver_list": "服务器列表"
+    },
+    "AuthLayout": {
+      "homeserver": "服务器",
+      "looking_for_homeserver": "正在查找服务器...",
+      "failed_to_find_homeserver": "未能找到服务器。",
+      "failed_to_connect_config": "连接失败。找到的服务器配置 {{host}} 似乎无法使用。",
+      "failed_to_connect_invalid": "连接失败。服务器配置 base_url 似乎无效。",
+      "connecting_to": "正在连接到 {{url}}",
+      "failed_to_connect": "连接失败。服务器当前不可用或不存在。",
+      "loading_auth_flow": "正在加载认证流程...",
+      "failed_to_get_auth_flow": "未能获取认证流程信息。"
+    },
+    "AuthFooter": {
+      "about": "关于",
+      "powered_by_matrix": "由 Matrix 驱动"
+    },
+    "SSOLogin": {
+      "continue_with_sso": "使用 SSO 继续",
+      "continue_with": "使用 {{name}} 继续"
+    },
+    "WelcomePage": {
+      "welcome_to_cinny": "欢迎使用 Cinny",
+      "subtitle": "又一个 Matrix 客户端。",
+      "source_code": "源代码",
+      "support": "支持"
+    },
+    "SyncStatus": {
+      "connecting": "正在连接...",
+      "connection_lost_reconnecting": "连接丢失！正在重新连接...",
+      "connection_lost": "连接丢失！"
+    },
+    "HomeTab": {
+      "mark_as_read": "标记为已读",
+      "home": "首页"
+    },
+    "SettingsTab": {
+      "user_settings": "用户设置"
+    },
+    "PasswordRegisterForm": {
+      "username": "用户名",
+      "password": "密码",
+      "confirm_password": "确认密码",
+      "register_button": "注册",
+      "password_mismatch": "密码不匹配",
+      "invalid_username": "无效的用户名",
+      "invalid_password": "密码太短或太弱"
+    }
+  },
+  "Settings": {
+    "general": "通用",
+    "account": "账户",
+    "notifications": "通知",
+    "devices": "设备",
+    "emojis_stickers": "表情和贴纸",
+    "developer_tools": "开发者工具",
+    "about": "关于",
+    "appearance": "外观",
+    "system_theme": "系统主题",
+    "system_theme_description": "根据系统偏好选择浅色或深色主题。",
+    "theme": "主题",
+    "theme_description": "未启用系统主题时使用的主题。",
+    "monochrome_mode": "单色模式",
+    "twitter_emoji": "Twitter 表情",
+    "page_zoom": "页面缩放",
+    "formatting": "格式化",
+    "year": "年",
+    "month": "月",
+    "day_of_month": "日期",
+    "day_of_week": "星期",
+    "save": "保存",
+    "date_format": "日期格式",
+    "date_time": "日期和时间",
+    "24_hour_time_format": "24小时时间格式",
+    "editor": "编辑器",
+    "enter_for_newline": "回车键换行",
+    "enter_for_newline_description": "使用Ctrl+ENTER发送消息，使用ENTER换行。",
+    "markdown_formatting": "Markdown 格式化",
+    "hide_typing_read_receipts": "隐藏输入状态和已读回执",
+    "hide_typing_read_receipts_description": "关闭输入状态和已读回执以保护您的隐私。",
+    "messages": "消息",
+    "message_layout": "消息布局",
+    "message_spacing": "消息间距",
+    "legacy_username_color": "传统用户名颜色",
+    "hide_membership_change": "隐藏成员变更",
+    "hide_profile_change": "隐藏资料变更",
+    "disable_media_auto_load": "禁用媒体自动加载",
+    "url_preview": "URL 预览",
+    "url_preview_encrypted_room": "加密房间中的 URL 预览",
+    "show_hidden_events": "显示隐藏事件"
+  },
+  "EmojiBoard": {
+    "sticker": "贴纸",
+    "emoji": "表情符号",
+    "recent": "最近使用",
+    "search_or_text_reaction": "搜索或文本反应",
+    "search": "搜索",
+    "react": "反应",
+    "search_results": "搜索结果",
+    "no_results_found": "未找到结果",
+    "no_sticker_packs": "没有贴纸包！",
+    "add_stickers_from_settings": "从用户、房间或空间设置中添加贴纸。",
+    "unknown_pack": "未知包",
+    "personal_pack": "个人包",
+    "unknown": "未知"
+  },
+  "EventReaders": {
+    "seen_by": "已查看者"
+  },
+  "ImageEditor": {
+    "image_editor": "图片编辑器",
+    "save": "保存"
+  },
+  "ImagePackView": {
+    "emojis_and_stickers": "表情符号和贴纸"
+  },
+  "ImageViewer": {
+    "download": "下载"
+  },
+  "InviteUserPrompt": {
+    "invite": "邀请",
+    "user_id": "用户ID",
+    "username_server_placeholder": "@用户名:服务器",
+    "reason_optional": "原因（可选）",
+    "invite_button": "邀请"
+  },
+  "JoinAddressPrompt": {
+    "join_with_address": "通过地址加入",
+    "enter_public_address": "输入公共地址以加入社区。地址格式如下：",
+    "address": "地址",
+    "invalid_address": "无效地址",
+    "open": "打开"
+  },
+  "LeaveRoomPrompt": {
+    "leave_room": "离开房间",
+    "confirm_leave": "您确定要离开这个房间吗？",
+    "failed_to_leave": "离开房间失败！",
+    "leaving": "正在离开...",
+    "leave": "离开"
+  },
+  "LeaveSpacePrompt": {
+    "leave_space": "离开空间",
+    "confirm_leave": "您确定要离开这个空间吗？",
+    "failed_to_leave": "离开空间失败！",
+    "leaving": "正在离开...",
+    "leave": "离开"
+  },
+  "MsgTypeRenderers": {
+    "image": "图片",
+    "video": "视频",
+    "audio": "音频",
+    "unnamed_file": "未命名文件",
+    "file": "文件",
+    "open_location": "打开位置",
+    "sticker": "贴纸"
+  },
+  "AccountDataEditor": {
+    "account_data": "账户数据",
+    "save": "保存",
+    "cancel": "取消",
+    "json_content": "JSON 内容",
+    "edit": "编辑"
+  }
+}

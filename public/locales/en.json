@@ -3,5 +3,302 @@
     "RoomCommon": {
       "changed_room_name": " changed room name"
     }
+  },
+  "Components": {
+    "PasswordStage": {
+      "account_password": "Account Password",
+      "auth_instruction": "To perform this action, you need to authenticate by entering your account password.",
+      "password": "Password",
+      "invalid_password": "Invalid password!",
+      "continue": "Continue"
+    },
+    "EmailStage": {
+      "email": "Email",
+      "send_verification_email": "Send Verification Email",
+      "cancel": "Cancel",
+      "verify_email": "Verify Email",
+      "failed_to_send": "Failed to send verification email request.",
+      "verification_sent": "Verification request sent",
+      "check_email": "Please check your email \"{{email}}\" and verify before continuing.",
+      "continue": "Continue",
+      "provide_email": "Provide Email",
+      "please_provide_email": "Please provide an email to send verification request.",
+      "sending_verification": "Sending verification email..."
+    },
+    "ReCaptchaStage": {
+      "cancel": "Cancel",
+      "invalid_data": "Invalid data",
+      "no_valid_data": "No valid data found to proceed with ReCAPTCHA verification.",
+      "check_box": "Please check the box below to continue."
+    },
+    "RegistrationTokenStage": {
+      "registration_token": "Registration Token",
+      "retry": "Retry",
+      "cancel": "Cancel",
+      "invalid_token": "The provided registration token is invalid.",
+      "please_submit_token": "Please submit the registration token provided by your server administrator."
+    },
+    "SSOStage": {
+      "sso_login": "SSO Login",
+      "auth_instruction": "To perform this action, you need to authenticate through SSO login.",
+      "continue": "Continue",
+      "continue_with_sso": "Continue with SSO"
+    },
+    "TermsStage": {
+      "retry": "Retry",
+      "cancel": "Cancel",
+      "failed_to_submit": "Failed to submit terms and conditions acceptance."
+    },
+    "AdditionalCreatorInput": {
+      "founders": "Founders",
+      "founders_description": "Special privileged users can be assigned at creation. These users have elevated control permissions and can only be modified during upgrades.",
+      "enter": "Enter",
+      "username_placeholder": "@username:server",
+      "no_suggestions": "No suggestions",
+      "provide_user_id": "Please provide user ID and press Enter."
+    },
+    "CreateRoomAliasInput": {
+      "address_optional": "Address (optional)",
+      "pick_unique_address": "Pick a unique address to make it discoverable.",
+      "address_taken": "This address is already taken. Please choose another address."
+    },
+    "CreateRoomKindSelector": {
+      "restricted": "Restricted",
+      "restricted_description": "Only members of the parent space can join.",
+      "private": "Private",
+      "private_description": "Only invited people can join.",
+      "public": "Public",
+      "public_description": "Anyone with the address can join."
+    },
+    "RoomVersionSelector": {
+      "version": "Version",
+      "versions": "Versions"
+    },
+    "Editor": {
+      "bold": "Bold",
+      "italic": "Italic",
+      "underline": "Underline",
+      "strike_through": "Strike through",
+      "inline_code": "Inline code",
+      "spoiler": "Spoiler",
+      "block_quote": "Block quote",
+      "block_code": "Code block",
+      "ordered_list": "Ordered list",
+      "unordered_list": "Unordered list",
+      "heading_1": "Heading 1",
+      "heading_2": "Heading 2",
+      "heading_3": "Heading 3",
+      "exit_formatting": "Exit formatting",
+      "disable_markdown": "Disable Markdown",
+      "enable_markdown": "Enable Markdown"
+    }
+  },
+  "Pages": {
+    "Login": {
+      "login": "Login",
+      "no_support": "This client does not support login on \"{{server}}\" server. No password-based and SSO login methods found.",
+      "no_account": "Don't have an account?",
+      "register": "Register"
+    },
+    "PasswordLoginForm": {
+      "hint": "Hint",
+      "username_hint": "Username:",
+      "matrix_id_hint": "Matrix ID:",
+      "email_hint": "Email:",
+      "username": "Username",
+      "server_not_allowed": "Your client instance does not allow login with custom servers.",
+      "failed_find_server": "Failed to find your Matrix ID server.",
+      "password": "Password",
+      "invalid_credentials": "Invalid username or password.",
+      "account_deactivated": "This account has been deactivated.",
+      "invalid_request": "Login failed. Some of your request data is invalid.",
+      "rate_limited": "Login failed. Your login request has been rate limited by the server, please try again later.",
+      "unknown_error": "Login failed. Unknown reason.",
+      "forget_password": "Forget password?",
+      "login_button": "Login"
+    },
+    "Register": {
+      "register": "Register",
+      "have_account": "Already have an account?",
+      "login": "Login",
+      "registration_disabled": "Registration is disabled on this server.",
+      "rate_limited": "You are rate limited! Please try again later.",
+      "invalid_request": "Invalid request! Failed to get any registration options.",
+      "not_support_registration": "This application does not support registration on this server."
+    },
+    "ResetPassword": {
+      "reset_password": "Reset Password",
+      "remember_password": "Remember password?",
+      "login": "Login",
+      "reset_success": "Password has been successfully reset. Please login with your new password.",
+      "homeserver_email": "Homeserver {{server}} will send you an email to reset your password.",
+      "email": "Email",
+      "new_password": "New Password",
+      "confirm_password": "Confirm Password",
+      "reset_button": "Reset Password"
+    },
+    "ServerPicker": {
+      "homeserver_list": "Homeserver List"
+    },
+    "AuthLayout": {
+      "homeserver": "Homeserver",
+      "looking_for_homeserver": "Looking for homeserver...",
+      "failed_to_find_homeserver": "Failed to find homeserver.",
+      "failed_to_connect_config": "Connection failed. Found homeserver config {{host}} seems unusable.",
+      "failed_to_connect_invalid": "Connection failed. Homeserver config base_url seems invalid.",
+      "connecting_to": "Connecting to {{url}}",
+      "failed_to_connect": "Connection failed. Homeserver is currently unavailable or does not exist.",
+      "loading_auth_flow": "Loading authentication flow...",
+      "failed_to_get_auth_flow": "Failed to get authentication flow information."
+    },
+    "AuthFooter": {
+      "about": "About",
+      "powered_by_matrix": "Powered by Matrix"
+    },
+    "SSOLogin": {
+      "continue_with_sso": "Continue with SSO",
+      "continue_with": "Continue with {{name}}"
+    },
+    "WelcomePage": {
+      "welcome_to_cinny": "Welcome to Cinny",
+      "subtitle": "Yet another Matrix client.",
+      "source_code": "Source Code",
+      "support": "Support"
+    },
+    "SyncStatus": {
+      "connecting": "Connecting...",
+      "connection_lost_reconnecting": "Connection lost! Reconnecting...",
+      "connection_lost": "Connection lost!"
+    },
+    "HomeTab": {
+      "mark_as_read": "Mark as read",
+      "home": "Home"
+    },
+    "SettingsTab": {
+      "user_settings": "User Settings"
+    },
+    "PasswordRegisterForm": {
+      "username": "Username",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "register_button": "Register",
+      "password_mismatch": "Password mismatch",
+      "invalid_username": "Invalid username",
+      "invalid_password": "Password is too short or too weak"
+    }
+  },
+  "Settings": {
+    "general": "General",
+    "account": "Account",
+    "notifications": "Notifications",
+    "devices": "Devices",
+    "emojis_stickers": "Emojis & Stickers",
+    "developer_tools": "Developer Tools",
+    "about": "About",
+    "appearance": "Appearance",
+    "system_theme": "System Theme",
+    "system_theme_description": "Choose light or dark theme based on system preference.",
+    "theme": "Theme",
+    "theme_description": "Theme to use when system theme is not enabled.",
+    "monochrome_mode": "Monochrome Mode",
+    "twitter_emoji": "Twitter Emoji",
+    "page_zoom": "Page Zoom",
+    "formatting": "Formatting",
+    "year": "Year",
+    "month": "Month",
+    "day_of_month": "Day of Month",
+    "day_of_week": "Day of Week",
+    "save": "Save",
+    "date_format": "Date Format",
+    "date_time": "Date & Time",
+    "24_hour_time_format": "24-hour Time Format",
+    "editor": "Editor",
+    "enter_for_newline": "Enter for Newline",
+    "enter_for_newline_description": "Use Ctrl+ENTER to send message, ENTER for newline.",
+    "markdown_formatting": "Markdown Formatting",
+    "hide_typing_read_receipts": "Hide Typing & Read Receipts",
+    "hide_typing_read_receipts_description": "Turn off typing and read receipts to protect your privacy.",
+    "messages": "Messages",
+    "message_layout": "Message Layout",
+    "message_spacing": "Message Spacing",
+    "legacy_username_color": "Legacy Username Color",
+    "hide_membership_change": "Hide Membership Change",
+    "hide_profile_change": "Hide Profile Change",
+    "disable_media_auto_load": "Disable Media Auto Load",
+    "url_preview": "URL Preview",
+    "url_preview_encrypted_room": "URL Preview in Encrypted Room",
+    "show_hidden_events": "Show Hidden Events"
+  },
+  "EmojiBoard": {
+    "sticker": "Sticker",
+    "emoji": "Emoji",
+    "recent": "Recent",
+    "search_or_text_reaction": "Search or Text Reaction",
+    "search": "Search",
+    "react": "React",
+    "search_results": "Search Results",
+    "no_results_found": "No results found",
+    "no_sticker_packs": "No sticker packs!",
+    "add_stickers_from_settings": "Add stickers from user, room or space settings.",
+    "unknown_pack": "Unknown Pack",
+    "personal_pack": "Personal Pack",
+    "unknown": "Unknown"
+  },
+  "EventReaders": {
+    "seen_by": "Seen by"
+  },
+  "ImageEditor": {
+    "image_editor": "Image Editor",
+    "save": "Save"
+  },
+  "ImagePackView": {
+    "emojis_and_stickers": "Emojis & Stickers"
+  },
+  "ImageViewer": {
+    "download": "Download"
+  },
+  "InviteUserPrompt": {
+    "invite": "Invite",
+    "user_id": "User ID",
+    "username_server_placeholder": "@username:server",
+    "reason_optional": "Reason (optional)",
+    "invite_button": "Invite"
+  },
+  "JoinAddressPrompt": {
+    "join_with_address": "Join with Address",
+    "enter_public_address": "Enter public address to join community. Address format:",
+    "address": "Address",
+    "invalid_address": "Invalid address",
+    "open": "Open"
+  },
+  "LeaveRoomPrompt": {
+    "leave_room": "Leave Room",
+    "confirm_leave": "Are you sure you want to leave this room?",
+    "failed_to_leave": "Failed to leave room!",
+    "leaving": "Leaving...",
+    "leave": "Leave"
+  },
+  "LeaveSpacePrompt": {
+    "leave_space": "Leave Space",
+    "confirm_leave": "Are you sure you want to leave this space?",
+    "failed_to_leave": "Failed to leave space!",
+    "leaving": "Leaving...",
+    "leave": "Leave"
+  },
+  "MsgTypeRenderers": {
+    "image": "Image",
+    "video": "Video",
+    "audio": "Audio",
+    "unnamed_file": "Unnamed File",
+    "file": "File",
+    "open_location": "Open Location",
+    "sticker": "Sticker"
+  },
+  "AccountDataEditor": {
+    "account_data": "Account Data",
+    "save": "Save",
+    "cancel": "Cancel",
+    "json_content": "JSON Content",
+    "edit": "Edit"
   }
 }
